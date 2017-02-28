@@ -1,0 +1,125 @@
+#Functions perform Specific Tasks
+
+#Functions are like mini programs that allow us to perform a specific task
+
+--->Menu Prices Go In ---> Code Calcs the average ---> Average of prices comes out
+---> Daily customers go in ---> Code calculates the average ----> Average of daily customers comes out
+
+The code performing these calculations is a function
+
+*Some Functions we used before
+We've been using functions all along, like print() -> print('Welcome to the Spam Van!')
+
+The String 'Welcome to the Spam Van! -> print() -> Output to console
+
+Another function we seen before, range() -> my_list = range(10)
+
+The number 10 -> range() -> Return a list from 0 to 9
+
+**Making Our Our Function
+1) What is the function name?
+2) What data do we send into the function? 
+3) What data comes out of the function? 
+
+Step One: Naming the Function
+The name of the fucntion is average
+
+def average():
+Every function starts with def, is given a name(average) and a colon(:) which makrs the begining of the functions code.
+
+Step Two:Declaring Function Parameters
+These parameters are varilables that can be used in the function
+
+def average(prices):
+parameters(prices) = Any variables we need the function to use 
+
+Step Three: Return Data From The Function
+def average(prices):
+  ...................
+  
+  return avg
+  
+All code inside of the function is indented
+Return value: Functions may or may not return values- this function returns the values of a variable called avg
+
+! Returning data from a function is optional
+
+
+Putting Code in the average() Function
+
+Our code from Level 2
+# Average Price
+total = 0
+prices = [29, 21, 55, 10]
+for price in prices:
+    total = total + price
+    
+avg = total/len(prices)
+print(avg)
+
+New Code
+
+def average(prices):
+    total = 0
+    
+    for price in prices:
+        total = total + price
+        
+    avg = total/len(prices)
+    return avg
+    
+    
+CALLING THE AVERAGE FUNCTION
+Functions don't run until you call them
+
+numbers = [1,2,3,4,5]
+my_average = average(numbers) #average is the function call, Our parameter is a list of numbers
+print(my_average)
+
+Output
+3
+#my_average now contains the value 3 - the result of calling the average function
+
+GENERALIZING OUR average() Function
+We want to use our Function for getting teh average for other lists of numbers, not just prices
+
+Before(BAD)
+def average(prices):
+    total = 0
+    
+    for price in prices:
+        total = total + price
+        
+    avg = total/len(prices)
+    return avg
+    
+After
+def average(numbers):
+    total = 0
+    
+    for num in numbers:
+        total = total + num
+        
+    avg = total/len(numbers)
+    return avg
+    
+HOW OUR FUNCTION EXECUTES CODE
+
+This is our file with our function defined, followed by our main program where we use our function 
+
+def average(numbers):
+    total = 0
+    
+    for num in numbers:
+        total = total + num
+        
+    avg = total/len(numbers)
+    return avg
+    
+# Use our function on prices
+prices = [2.50, 3, 4.50, 5]
+
+result = average(prices)
+
+print(result)
+
