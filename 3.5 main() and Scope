@@ -1,0 +1,58 @@
+main() and Calling main()
+A best pratice is to organize our main program code into a function called ... main()
+
+Order of Execution
+def average(numbers):      #The average() function will only run when it gets called
+    total = 0
+    for num in list:
+        total = total + num
+        
+     avg = total/len(numbers)
+     return avg
+     
+def main():     # Then runs all of the code in main()
+    prices = [29, 21, 55, 10]
+    
+    result = averages(prices)
+    
+    print(result)
+    
+main()    #1 All of the Execution starts here
+
+Understanding Local Scope
+
+def average(numbers):      #Local Scope: The varibles declared in the average function only exists within the function
+    total = 0              #Their scope is local to this function
+    for num in list:
+        total = total + num
+        
+     avg = total/len(numbers)
+     return avg
+     
+def main():     # Then runs all of the code in main()
+    prices = [29, 21, 55, 10]
+    
+    result = averages(prices)    #If we try to access total in main() we get this error                   
+    print(total)
+    print(result)                #NameError: name 'total' is not defined 
+    
+main()
+
+ORDER MATTERS WITH VARIABLE DECLARATION
+def average(numbers):      #The average() function will only run when it gets called
+    total = 0
+    for num in list:
+        total = total + num
+        
+     avg = total/len(numbers)
+     return avg
+     
+def main():     # Then runs all of the code in main()
+    prices = [29, 21, 55, 10]
+    
+    result = averages(prices)
+    print(oder_goal)
+    print(result)
+    
+main()
+order_goal = 25 #Produces error NameError: name 'total' is not defined
