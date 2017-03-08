@@ -1,0 +1,38 @@
+Problem: Our Orders Disappear When We Quit
+
+How to Write to a File
+1)Open File
+2)Write
+3)Close 
+
+sales_log = open('spam_orders.txt', 'w') #Open
+sales_log.write('The Spam Van\n') #Write
+sales_log.write('Sales Log')    #Write
+sales_log.close() #Close
+
+Problem: We Need to Build a Customer Sales Log
+
+Assumme each customer order is a dictionary
+order = {'Cheeky Spam': 1.0, 'Chips Spam':4.0}
+order = {'Knackered Spam':1.0}
+order = {'Cheerio Spam': 1.0, 'Smashing Spam': 3.0}
+
+The Steps to Write to our Sales Log
+
+def write_sales_log(order):
+    file = open('sales.txt', 'a' )
+    
+    total = 0
+    for item, price in order.items():
+        file.write(item + ' ' + format(price,  '.2f') + '\n')
+        total += price
+        
+    file.write('total =  ' + format(total,  '.2f') + '\n\n)
+    file.close()
+    
+    def main():
+        order = {'Cheeky Spam': 1.0, 'Yonks Spam':4.0}
+        write_sales_log(order)
+        order = {'Cheerio Spam': 1.0, 'Smashing Spam':3.0}
+        write_sales_log(order)
+        
