@@ -1,0 +1,45 @@
+Reading the Contents of A File
+file_name.read() will return a string containing the entire contents of the file.
+
+1)open
+2)read
+3)close
+
+dollar_spam = open('dollar_menu.txt', 'r')
+print(dollar_spam.read())
+dollar_spam.close()
+
+Reading an Individual Line From a File
+file_name.readline() will return a string for the next single line in the file
+
+def read_dollar_menu():
+    dollar_spam = open('dollar_menu.txt', 'r')
+    print('1st line:', dollar_spam.readine())
+    print('2nd line:', dolar_spam.readline())
+    dollar_spam.close()
+
+#readline() will read until a newline '\n'
+
+Reading the Dollar Menu as a List of Lines
+We can read all of the lines individually in a loop which will be convenitent to add each item to a list
+
+ def read_dollar_menu():
+     dollar_spam = open('dollar_menu.txt', 'r')
+     
+     for line in dollar_spam:
+         print(line)
+         
+     dollar_spam.close()
+     
+Reading the Dollar Menu Into a List
+
+def read_dollar_menu():
+     dollar_spam = open('dollar_menu.txt', 'r')
+     
+     dollar_menu = []
+     for line in dollar_spam:
+         line = line.strip() #str.strip removes any leading or trailing whitespace
+         dollar_menu.append(line)
+         
+     print(dollar_menu)
+     dollar_spam.close()
