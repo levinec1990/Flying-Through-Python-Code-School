@@ -1,0 +1,27 @@
+schedule_file = open('schedule.txt', 'r')
+for line in schedule_file:
+    show,time = line.split(' - ')  
+    print(show,time)
+schedule_file.close()
+
+#Splitting a String 4.6
+#Now we'll use some Python tricks we haven't seen before. 
+#The performance is separated from the time by a dash ' - '. 
+#We can divide that string by using line.split(' - ') and this will return two separate things: the show and the time.
+
+performances = {}
+
+schedule_file = open('schedule.txt', 'r')
+
+for line in schedule_file:
+    (show, time) = line.split(' - ')
+    performances[show] = (time)
+    time.strip()
+    print(show, time)
+    
+print(performances)
+schedule_file.close() 
+
+#Reading Into a Dictionary 4.7
+#Now that we have the performance and time from each line in our file, 
+#let's save them into a dictionary.
