@@ -1,0 +1,11 @@
+schedule_file = open('schedule.txt', 'r')
+
+for line in schedule_file:
+    print(line)
+    
+schedule_file.close()
+
+
+#Reading schedule.txt 250 PTS
+#We'll also need to be able to read our schedule file back into a dictionary. 
+#Right now our schedule.txt file looks like this:
