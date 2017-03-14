@@ -1,0 +1,92 @@
+Introducing Modules
+*Modules are code libraries that contain functions we can call from our code. They make our lives easier by implementing the hard stuff for us 
+
+import random
+ticket = random.randint(1, 1000)
+print(ticket)
+
+import math
+answer = math.sqrt(3)
+print(answer)
+
+Installing Modules with Pip
+*The requests module does not come pre-installed with Python, so we'll have to install it. Pip is a package manager that will install modules for us. 
+
+pip installl requests #Where 'pip install' is the commmand and requests is the name of the module
+
+Using JSON to Format and Share Data
+*JSON is a standard way to format and share data. 
+
+JSON uses a collection of keys and values which look just like Python dictionaries
+{
+  "price": "3.00",
+  "name": "Omelet", 
+  "desc": "Yummy"
+},
+
+
+How Would JSON Be Used to Store Our Menu
+*What if we wanted to store more information about a menu item - its name, description, and price? We could do this with a dictrionary that has keys for name, description, and price. 
+
+first_item = {'name': 'Spam n Eggs',
+              'description': 'Two eggs with Spam',
+              'price':2.50}
+              
+second_item = {'name': 'Spam n Jam',
+               'description': 'Biscuit with Jam with Spam',
+               'price':3.50}
+               
+print(first_item['name'], first_item['price'])
+print(second_item['name'], second_item['price'])
+
+OUTPUT
+Span n Eggs 2.5
+Spam n Jam 3.5
+
+A List of Dictionaries
+
+first_item = {'name': 'Spam n Eggs',
+              'description': 'Two eggs with Spam',
+              'price':2.50}
+              
+second_item = {'name': 'Spam n Jam',
+               'description': 'Biscuit with Jam with Spam',
+               'price':3.50}
+      
+ menu_items = [first_item, second_item]
+ 
+ print(menu_items[0]['name'}, menu_items[0]['price'], menu_items[0]['desc'])
+ print(menu_items[1]['name'}, menu_items[1]['price'], menu_items[1]['desc'])
+ 
+ OUTPUT
+ Spam n Eggs 2.5 Two eggs & Spam
+ Spam n Jam 3.5, Jam & Spam
+ 
+ A List of Dictionaries That Looks Like JSON
+ 
+ menu_items = [{'name': 'Spam n Eggs',
+              'description': 'Two eggs with Spam',    #menu_items[0]
+              'price':2.50},
+              {'name': 'Spam n Jam',
+               'description': 'Biscuit with Jam with Spam', #menu_items[1]
+               'price':3.50}
+               {'name': 'Spam n Ham',
+               'description': 'Ham & Spam', #menu_items[2]
+               'price':4.50}
+ 
+Getting Today's Menu
+*Requesting and printing today's menu
+
+import requests  #Import the Module so we can use it for requests
+
+my_request = requests.get('http://go.codeschool.com/spamvanmenu')  #Call requests.get() with our URL
+
+menu_list = my_request.json() #Get the request in JSON format
+
+print("Today's Menu:")
+for item in menu_list:
+    print(item['name'], ': ', item['desc'].title(), ' , $',
+          item['price'], sep='')
+ 
+
+               
