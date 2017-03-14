@@ -1,0 +1,14 @@
+#If for some reason we try to read our schedule.txt file and it doesn't exist, our program will crash. Let's fix this by adding exception handling to our schedule reader program.
+
+
+performances = {}
+try:
+    schedule_file = open('schedule.txt', 'r')
+except FileNotFoundError as err:
+    print(err)
+for line in schedule_file:
+    (show, time) = line.split(' - ')
+    performances[show] = time
+
+schedule_file.close()
+print(performances)
