@@ -1,0 +1,45 @@
+Using Try, Except to Recover from Errors
+
+try:                                #Like Saying Try this and if you get an error
+    file = open('sales.txt', 'r')
+    print (file.read())
+except:
+    print('File doesn't exist')     #Go here and print this error message
+                                    #And then continue wiht the program
+                                    
+Types of Exceptions
+Python has 60-plus types of exceptions. Here are some of the ones we've seen before:
+FileNotFoundError #File doesn't exist
+IndexError #Index out of bounds
+KeyError #Key doesn't exist
+NameError #Variable name doesn't exist in local or global scope
+ValueError #Value is the wrong type
+
+Try, Except in Other Situations
+*We can also use try, except in other situations that might have unexpected problems
+*like casting user input to a number.
+
+price = input("Enter the price: ")
+
+try:
+    price = float(price)
+    print('Price =', price)
+except ValueError:
+    print('Not a Number!')
+    
+#User inputs 25
+Enter the price: 25
+Price = 25.0
+
+#User inputs 'oops'
+Enter the price: oops
+Not a Number!
+
+Storing the Exception's Error Message
+*We can also save the exceptions error message in a variable for printing
+
+try:
+    price = float(price)
+    print('Price =', price)
+except ValueError as err:   #Create a variable 'err' to hold the error message
+    print(err)
