@@ -1,0 +1,31 @@
+Lots of Code in One File Is a Problem 
+
+Creating Modules for Organization
+*A script containing definitions is a module and can be imported by a script or another module. 
+
+spam_van.py
+import orders
+import menu
+imports sales
+
+*As long as all of these files are in the same directory, we can import them into spam_van.py by writing import module_name
+
+orders.py(filename)
+def print_menu(menu):
+    ...
+def get_order(menu)
+    ...
+def total_bill(orders, menu):
+    ...
+    
+spam_van.py
+import orders
+
+def main():
+    menu = {'Cheerio Spam': 0.50}
+    orders.print_menu(menu)
+    orders = orders.get_order(menu)
+    total = orders.bill_total(orders, menu)
+    print('You ordered:', order, 'Total:', total)
+    
+main()
